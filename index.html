@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Sprite sheet animation flipper</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+  </head>
+
+  <body>
+    <div class="box">
+      <h1>Step 1: Select sprite sheet file</h1>
+      <input type="file" onchange="changeFile(this.files)" id="sprite" name="sprite" accept="image/png, image/jpeg" />
+
+      <img id="preview" />
+    </div>
+
+    <div class="box">
+      <h1>Step 2: Select size of each sprite</h1>
+
+      <div class="section">
+        Width:
+        <input class="option" type="number" step="1" min="1" onfocus="this.select();" onchange="applyOptions({ width: this.value })" id="option-width" /> px
+      </div>
+      <div class="section">
+        Height:
+        <input class="option"  type="number" step="1" min="1" onfocus="this.select();" onchange="applyOptions({ height: this.value })" id="option-height" /> px
+      </div>
+
+    </div>
+
+    <div class="box">
+      <h1>Step 3: Go!</h1>
+
+      <input id="preview-button" type="button" onclick="renderFlipped()" value="Render flipped animation" />
+
+      <br />
+      <img id="result" />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
